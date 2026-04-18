@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligenza artificiale</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/png" href="noun-ai-8297293.png">
+</head>
+
+<body id="mainBody">
+
+    <header>
+        <div class="navbar-top">
+            <div class="navbar-brand">
+                <img src="noun-ai-8297293.png" alt="Logo">
+                <span>L'intelligenza artificiale</span>
+            </div>
+            <div style="font-size: 11px; opacity: 0.7;">Evolution 2026</div>
+        </div>
+
+        <div class="full-width-container">
+            <button onclick="cambiaPagina('home')">Home</button>
+            <button onclick="cambiaPagina('gemini')" title="Gemini">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" style="height:20px; vertical-align:middle; margin-right:5px;"> 
+                </button>
+            <button onclick="cambiaPagina('chatgpt')" title="OpenAI ChatGPT">
+                <img src="chatgpt.png" class="nav-logo-wide3">
+                </button>
+            <button onclick="cambiaPagina('claude')" title="Anthropic Claude">
+                <img src="claude_kurv.1200-removebg-preview.png" class="nav-logo-wide2">
+                </button>
+            <button onclick="cambiaPagina('perplexity')" title="Perplexity AI">
+                <img src="perplexity.png" class="nav-logo-wide1">
+                </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="display-area">
+            <h2>Benvenuti nel portale AI</h2>
+            <p>Esplora le sezioni del sito utilizzando la barra di navigazione superiore.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Il Progetto</h4>
+                <p>Divulgazione scientifica sull'IA.</p>
+            </div>
+
+            <div class="footer-section">
+                
+            </div>
+
+            <div class="footer-section">
+                <h4>Contatti</h4>
+                <ul>
+                    <li>Email: federico.pastori@liceomajoranarho.edu.it</li>
+                    <li>Sede: Settimo Milanese</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 L'intelligenza artificiale - Progetto didattico.
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-overlay">
+        <div class="cookie-box">
+            <div class="cookie-content">
+                <h4><i class="fas fa-shield-alt"></i> Centro Preferenze Privacy</h4>
+                <p>Questo sito utilizza cookie per migliorare l'esperienza. Puoi personalizzare le tue scelte qui sotto.</p>
+                
+                <div class="cookie-options">
+                    <label><input type="checkbox" checked disabled> Necessari (Sempre attivi)</label>
+                    <label><input type="checkbox" id="chk-analytics"> Analitici (Statistiche)</label>
+                    <label><input type="checkbox" id="chk-marketing"> Marketing (Personalizzazione)</label>
+                </div>
+                <a href="#" onclick="cambiaPagina2('cookies')" class="cookie-link">Leggi la Cookie Policy completa</a>
+            </div>
+            <div class="cookie-buttons">
+                <button onclick="gestisciConsenso('totale')" class="btn-accetta">Accetta Tutti</button>
+                <button onclick="gestisciConsenso('selezionati')" class="btn-opzionali">Salva Selezionati</button>
+                <button onclick="rifiutaTutto()" class="btn-rifiuta">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+
+    
+</body>
+</html>

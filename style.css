@@ -1,0 +1,339 @@
+/* --- IMPOSTAZIONI GENERALI --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    /* Flexbox serve a spingere il footer sempre in fondo alla pagina */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    /* SFONDO PERSISTENTE: l'immagine rimane in tutte le pagine */
+    background-image: url('Gemini_Generated_Image_cc7mcrcc7mcrcc7m.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* L'immagine non scorre con il testo */
+    
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* --- NAVBAR E HEADER --- */
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Centra verticalmente il logo e il testo rispetto alla linea mediana */
+    gap: 12px;           /* Spazio costante tra logo e titolo */
+}
+.navbar-top {
+    background-color: #1a252f; /* Blu scuro */
+    color: white;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand img {
+    height: 38px;        /* Dimensione bilanciata */
+    width: auto;
+    display: block;      /* Rimuove spazi vuoti indesiderati sotto l'immagine */
+    filter: invert(1);
+}
+
+.navbar-brand span {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;      /* Rimuove l'altezza riga eccessiva che sballa l'allineamento */
+    display: flex;
+    align-items: center; /* Ulteriore sicurezza per il centro del testo */
+}
+
+/* Contenitore dei bottoni a tutta larghezza */
+.full-width-container {
+    display: flex;
+    width: 100%;
+    height: 45px;
+}
+
+/* Stile dei bottoni (stesso colore della navbar) */
+.full-width-container button {
+    flex: 1; /* Divide lo spazio equamente tra i bottoni */
+    border: none;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #1a252f;
+    color: white;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.full-width-container button:hover {
+    background-color: #243342; /* Colore leggermente più chiaro al passaggio del mouse */
+    color: #00d4ff;
+}
+
+/* --- AREA DEL CONTENUTO --- */
+.main-content {
+    flex: 1; /* Permette all'area centrale di espandersi spingendo giù il footer */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Il riquadro bianco dove appare il testo */
+#display-area {
+    max-width: 800px;
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* --- FOOTER RIDOTTO --- */
+footer {
+    background-color: #1a252f;
+    color: #bdc3c7;
+    padding: 15px 15px 10px; /* Padding ridotto come richiesto */
+    margin-top: auto; /* Fondamentale per posizionarlo sempre in basso */
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Font piccoli per il footer */
+.footer-section h4 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.footer-section p, 
+.footer-section ul, 
+.footer-section li, 
+.footer-section a {
+    font-size: 10px; /* Caratteri molto piccoli come richiesto */
+    line-height: 1.4;
+    text-decoration: none;
+    color: #bdc3c7;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section a:hover {
+    color: #00d4ff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 9px;
+}
+/* --- STILE BANNER COOKIE --- */
+/* --- COOKIE BANNER --- */
+.cookie-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(26, 37, 47, 0.95); /* Blu scuro navbar con trasparenza */
+    padding: 20px;
+    z-index: 10000;
+    display: none;
+    border-top: 2px solid #00d4ff;
+}
+
+.cookie-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-content h4 { color: white; margin: 0 0 5px 0; font-size: 14px; }
+.cookie-content p { color: #bdc3c7; margin: 0; font-size: 12px; }
+.cookie-link { color: #00d4ff; font-size: 11px; text-decoration: underline; }
+
+.cookie-buttons { display: flex; gap: 10px; }
+
+.cookie-buttons button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-accetta { background-color: #00d4ff; color: #1a252f; }
+.btn-opzionali { background-color: #34495e; color: white; }
+.btn-rifiuta { background-color: #e74c3c; color: white; }
+
+.cookie-buttons button:hover { opacity: 0.8; transform: translateY(-2px); }
+.cookie-options {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.cookie-options label {
+    font-size: 11px;
+    color: #bdc3c7;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cookie-options input[type="checkbox"] {
+    accent-color: #00d4ff; /* Colore azzurro per le spunte */
+}
+
+/* Stile Tabella Gemini */
+.gemini-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.gemini-table th, .gemini-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.gemini-table th {
+    background-color: #1a252f;
+    color: white;
+    text-transform: uppercase;
+}
+
+.gemini-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.logo-azienda {
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Stile specifico per il logo di Claude nella navbar */
+
+.nav-logo-wide1 {
+    height: 22px; /* Un po' più bassi perché sono molto larghi */
+    width: auto;
+    vertical-align: middle;
+    filter: invert(1) brightness(2); /* Forza il bianco puro per massima visibilità */
+    transition: transform 0.3s ease;
+}
+.nav-logo-wide2 {
+    height: 44px; /* Un po' più bassi perché sono molto larghi */
+    width: auto;
+    vertical-align: middle;
+    filter: invert(1) brightness(2); /* Forza il bianco puro per massima visibilità */
+    transition: transform 0.3s ease;
+}
+.nav-logo-wide3 {
+    height: 46px; /* Un po' più bassi perché sono molto larghi */
+    width: auto;
+    vertical-align: middle;
+    filter: invert(1) brightness(2); /* Forza il bianco puro per massima visibilità */
+    transition: transform 0.3s ease;
+}
+/* Assicurati che il contenitore sia il punto di riferimento */
+#display-area {
+    position: relative; /* Indispensabile per posizionare la X all'interno */
+    max-width: 800px;
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Stile del tasto Chiudi */
+.btn-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background:  #1a252f;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Lo rende circolare */
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.btn-close:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Stile del tasto di collegamento esterno (Alto a Destra) */
+.btn-external {
+    position: absolute;
+    top: 15px;
+    right: 15px; /* Posizionato a destra */
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.btn-external img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.btn-external:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-color: #00d4ff;
+}
+
+/* Assicurati che il display-area abbia spazio sufficiente per i tasti */
+#display-area {
+    position: relative;
+    padding-top: 50px; /* Aumentato per non far sovrapporre i tasti al titolo */
+}
